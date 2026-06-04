@@ -2,7 +2,7 @@
 # 安装方式：pip install pre-commit && pre-commit install
 # 触发：git commit 时自动运行；agent 不允许 --no-verify 跳过
 #
-# 参考：项目/_联动项目规范.md 第七节「三层把关」
+# 参考：项目/_GitHub项目规范.md 第七节「三层把关」
 
 repos:
   # 通用：禁敏感文件、修复格式
