@@ -1,11 +1,11 @@
 ---
-title: "联动闭环测试项目"
+title: "GitHub 仓库闭环测试项目"
 id: sc-rna-seq-loop-test
 type: research
 status: active
 phase: planning
 priority: low
-tags: [测试, 联动闭环]
+tags: [测试, GitHub仓库闭环]
 created: 2026-06-04
 updated: 2026-06-04
 external_path: ""
@@ -19,11 +19,11 @@ repo:
   reviewer_profile: default
 ---
 
-# 联动闭环测试项目
+# GitHub 仓库闭环测试项目
 
 ## 项目概述
 
-AI-OS 联动闭环测试项目，用于验证 coder->reviewer->merge 完整工作流。可随时删除。
+AI-OS GitHub 仓库项目闭环测试样板，用于验证 coder → code_reviewer → merge → repo-loop 完整工作流。可随时删除。
 
 ## 相关项目
 
