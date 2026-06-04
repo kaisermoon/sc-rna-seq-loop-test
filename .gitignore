@@ -48,7 +48,7 @@ data/raw/
 results/data/
 *.tmp
 
-# === 敏感上下文（联动项目强制保留，禁止删除）===
+# === 敏感上下文（GitHub 仓库项目强制保留，禁止删除）===
 _memory.md
 planning/
 
@@ -56,3 +56,6 @@ planning/
 .env
 .env.local
 secrets/
+
+# === worktree（并行多 PR 工作区，不追踪到内部 git）===
+.worktrees/
