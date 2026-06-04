@@ -79,3 +79,17 @@ def variance(values: Sequence[float], *, ddof: int = 0) -> float:
         raise ValueError("ddof must be < len(values)")
     mu = mean(values)
     return sum((x - mu) ** 2 for x in values) / (n - ddof)
+
+
+def numpy_mean(values: Sequence[float]) -> float:
+    """Return the mean using numpy for demonstration purposes.
+
+    Args:
+        values: A sequence of float values.
+
+    Returns:
+        The arithmetic mean as a float, computed via numpy.
+    """
+    import numpy as np
+
+    return float(np.mean(values))

@@ -1,5 +1,5 @@
 import pytest
-from src.utils.math import mean, median, variance
+from src.utils.math import mean, median, variance, numpy_mean
 
 
 def test_mean_normal_list():
@@ -72,3 +72,13 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_numpy_mean_normal_list():
+    """numpy_mean() returns the arithmetic average via numpy."""
+    assert numpy_mean([1.0, 2.0, 3.0, 4.0]) == pytest.approx(2.5)
+
+
+def test_numpy_mean_single_element():
+    """numpy_mean() of a single-element list returns that element."""
+    assert numpy_mean([42.0]) == pytest.approx(42.0)

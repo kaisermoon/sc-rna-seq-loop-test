@@ -2,6 +2,7 @@
 name = "sc-rna-seq-loop-test"
 version = "0.1.0"
 description = "scRNA-seq analysis loop test project"
+dependencies = ["numpy>=1.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
