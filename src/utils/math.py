@@ -2,16 +2,20 @@ from collections.abc import Sequence
 
 
 def mean(values: Sequence[float]) -> float:
-    """Return the arithmetic mean of a non-empty sequence of numbers.
+    """计算一个数值序列的算术平均值。
 
     Args:
-        values: A sequence of float values.
-
+        values: 浮点数序列。
     Returns:
-        The arithmetic mean as a float.
-
+        算术平均值（float）。
     Raises:
-        ValueError: If the input sequence is empty.
+        ValueError: 当 values 为空序列时抛出。
+
+    Examples:
+        >>> mean([1.0, 2.0, 3.0])
+        2.0
+        >>> mean([10.0])
+        10.0
     """
     if not values:
         raise ValueError("mean of empty sequence")
