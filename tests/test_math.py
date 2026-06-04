@@ -72,3 +72,8 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_intentionally_failing_for_ci_red():
+    """Stress test: intentionally fails to verify reviewer CI gate."""
+    assert False, "this test must fail for T08 stress test"
