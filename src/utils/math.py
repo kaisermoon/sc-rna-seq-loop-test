@@ -1,4 +1,5 @@
 from collections.abc import Sequence
+import math
 
 
 def mean(values: Sequence[float], *, strict: bool = False) -> float:
@@ -79,3 +80,21 @@ def variance(values: Sequence[float], *, ddof: int = 0) -> float:
         raise ValueError("ddof must be < len(values)")
     mu = mean(values)
     return sum((x - mu) ** 2 for x in values) / (n - ddof)
+
+
+def stddev(values: Sequence[float], *, ddof: int = 0) -> float:
+    """Return the standard deviation of a non-empty sequence of numbers.
+
+    Args:
+        values: A sequence of float values.
+        ddof: Delta degrees of freedom. Use 0 for population stddev,
+              1 for sample stddev.
+
+    Returns:
+        The standard deviation as a float.
+
+    Raises:
+        ValueError: If the input sequence is empty.
+        ValueError: If ddof is not less than len(values).
+    """
+    return math.sqrt(variance(values, ddof=ddof))

@@ -1,5 +1,5 @@
 import pytest
-from src.utils.math import mean, median, variance
+from src.utils.math import mean, median, stddev, variance
 
 
 def test_mean_normal_list():
@@ -72,3 +72,19 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_stddev_population():
+    """stddev(ddof=0) computes the population standard deviation."""
+    assert stddev([2.0, 4.0, 4.0, 4.0, 5.0, 5.0, 7.0, 9.0]) == pytest.approx(2.0)
+
+
+def test_stddev_sample():
+    """stddev(ddof=1) computes the sample standard deviation."""
+    assert stddev([2.0, 4.0, 4.0, 4.0, 5.0, 5.0, 7.0, 9.0], ddof=1) == pytest.approx(2.138089935299395)
+
+
+def test_stddev_empty_raises():
+    """stddev() of an empty list raises ValueError."""
+    with pytest.raises(ValueError, match="variance of empty sequence"):
+        stddev([])
