@@ -1,0 +1,10 @@
+[project]
+name = "sc-rna-seq-loop-test"
+version = "0.1.0"
+description = "scRNA-seq analysis loop test project"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.ruff]
+# Placeholder for future linting configuration
