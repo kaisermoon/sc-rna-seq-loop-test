@@ -28,7 +28,7 @@ repos:
 
       - id: forbid-protected-branch-direct-commit
         name: 拒绝在受保护分支直推
-        entry: "bash -c 'branch=$(git symbolic-ref --short HEAD 2>/dev/null); for protected in main release; do if [ \"$branch\" = \"$protected\" ]; then echo \"BLOCKED 受保护分支 $branch 禁止直接 commit，请创建 feature branch\"; exit 1; fi; done'"
+        entry: "bash -c 'parent=$(git rev-parse --verify HEAD^ 2>/dev/null); [ -z \"$parent\" ] && exit 0; branch=$(git symbolic-ref --short HEAD 2>/dev/null); for protected in main release; do if [ \"$branch\" = \"$protected\" ]; then echo \"BLOCKED 受保护分支 $branch 禁止直接 commit，请创建 feature branch\"; exit 1; fi; done'"
         language: system
         pass_filenames: false
         stages: [pre-commit]
