@@ -18,6 +18,24 @@ def test_mean_empty_raises():
         mean([])
 
 
+def test_mean_strict_valid():
+    """mean(values, strict=True) with int/float-only values succeeds."""
+    assert mean([1.0, 2.0], strict=True) == pytest.approx(1.5)
+
+
+def test_mean_strict_rejects_str():
+    """mean(values, strict=True) raises TypeError when a string is present."""
+    with pytest.raises(TypeError, match="strict mode requires int or float, got str"):
+        mean([1.0, "x"], strict=True)
+
+
+def test_mean_strict_rejects_bool():
+    """mean(values, strict=True) raises TypeError for bool even though bool
+    is technically an int subclass."""
+    with pytest.raises(TypeError, match="strict mode requires int or float, got bool"):
+        mean([True, False], strict=True)
+
+
 def test_median_odd_length():
     """median() of an odd-length list returns the middle element."""
     assert median([3.0, 1.0, 2.0]) == pytest.approx(2.0)
