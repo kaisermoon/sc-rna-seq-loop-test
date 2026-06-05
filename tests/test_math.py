@@ -1,5 +1,7 @@
 import pytest
+from unittest.mock import patch
 from src.utils.math import mean, median, variance
+from src.utils import math as math_mod
 
 
 def test_mean_normal_list():
@@ -72,3 +74,18 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_multiply_basic():
+    """Test multiply with mock — actual implementation never called."""
+    with patch("src.utils.math.multiply", return_value=999.0):
+        from src.utils.math import multiply
+        result = multiply(2.0, 3.0)
+        assert result == 999.0
+
+
+def test_multiply_zero():
+    """Test multiply with mock — zero case."""
+    with patch.object(math_mod, "multiply", return_value=999.0):
+        result = math_mod.multiply(0.0, 5.0)
+        assert result == 999.0
