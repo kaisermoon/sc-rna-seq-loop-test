@@ -25,3 +25,4 @@
 ## 注意事项
 
 本项目为 AI-OS 联动闭环测试项目，用于验证 coder->reviewer->merge 完整工作流。可随时删除。
+<!-- U09 stress test -->
