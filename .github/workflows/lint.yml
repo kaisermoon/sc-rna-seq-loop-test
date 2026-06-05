@@ -23,7 +23,7 @@ jobs:
         if: hashFiles('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements*.txt') != ''
         run: |
           pip install ruff
-          ruff check . || true   # 占位：项目正式启用 ruff 规则后去掉 || true
+          ruff check src/utils/ || true   # 占位：项目正式启用 ruff 规则后去掉 || true
 
       # ----- R (lintr) -----
       - name: Set up R

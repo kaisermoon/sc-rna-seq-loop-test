@@ -72,3 +72,13 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_absolute_positive():
+    from src.utils.math import absolute
+    assert absolute(3.0) == 3.0
+
+
+def test_absolute_negative():
+    from src.utils.math import absolute
+    assert absolute(-5.0) == 5.0

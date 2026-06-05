@@ -79,3 +79,8 @@ def variance(values: Sequence[float], *, ddof: int = 0) -> float:
         raise ValueError("ddof must be < len(values)")
     mu = mean(values)
     return sum((x - mu) ** 2 for x in values) / (n - ddof)
+
+
+def absolute(x: float) -> float:
+    """Return absolute value of x."""
+    return abs(x)
