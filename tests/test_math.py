@@ -72,3 +72,9 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_buggy_subtract():
+    """Test buggy_subtract — would fail if pytest actually ran."""
+    from src.utils.math import buggy_subtract
+    assert buggy_subtract(5.0, 3.0) == 2.0  # 实际返回 8.0
