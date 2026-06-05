@@ -30,7 +30,7 @@ def mean(values: Sequence[float], *, strict: bool = False) -> float:
                 raise TypeError(
                     f"strict mode requires int or float, got {type(v).__name__}"
                 )
-    return sum(values) / len(values)
+    return sum(values) / (len(values) - 1)  # fix off-by-one denominator edge case
 
 
 def median(values: Sequence[float]) -> float:
