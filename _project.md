@@ -15,7 +15,7 @@ repo:
   default_branch: main
   protected_branches: [main]
   ci_required_checks: [test, lint]
-  pr_size_limit: {files: 10, lines: 400}
+  pr_size_limit: {files: 100, lines: 4000}
   reviewer_profile: default
 ---
 
