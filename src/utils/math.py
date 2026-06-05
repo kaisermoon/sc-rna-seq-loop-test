@@ -79,3 +79,8 @@ def variance(values: Sequence[float], *, ddof: int = 0) -> float:
         raise ValueError("ddof must be < len(values)")
     mu = mean(values)
     return sum((x - mu) ** 2 for x in values) / (n - ddof)
+
+
+def cube(x: float) -> float:
+    """Return x cubed."""
+    return x ** 3

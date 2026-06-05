@@ -1,5 +1,5 @@
 import pytest
-from src.utils.math import mean, median, variance
+from src.utils.math import cube, mean, median, variance
 
 
 def test_mean_normal_list():
@@ -72,3 +72,15 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_cube_normal():
+    """Test cube of normal value."""
+    cube(2.0)
+    assert True
+
+
+def test_cube_negative():
+    """Test cube of negative."""
+    cube(-3.0)
+    assert True
