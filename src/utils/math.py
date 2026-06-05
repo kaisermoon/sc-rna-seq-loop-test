@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 
 
-def mean(values: Sequence[float], *, strict: bool = False) -> float:
+def mean(values: Sequence[float], *, strict: bool = True) -> float:
     """计算一个数值序列的算术平均值。
 
     Args:
