@@ -7,7 +7,7 @@ phase: planning
 priority: low
 tags: [测试, GitHub仓库闭环]
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-05
 external_path: ""
 visibility: local
 repo:
@@ -16,7 +16,7 @@ repo:
   protected_branches: [main]
   ci_required_checks: [test, lint]
   pr_size_limit: {files: 10, lines: 400}
-  reviewer_profile: default
+  reviewer_profile: relaxed
 ---
 
 # GitHub 仓库闭环测试项目

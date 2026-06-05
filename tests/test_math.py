@@ -72,3 +72,15 @@ def test_variance_ddof_too_large_raises():
     """variance() with ddof >= len raises ValueError."""
     with pytest.raises(ValueError, match="ddof must be < len"):
         variance([1.0, 2.0], ddof=2)
+
+
+def test_negate_positive():
+    """Test negate of positive."""
+    from src.utils.math import negate
+    assert negate(3.0) == -3.0
+
+
+def test_negate_negative():
+    """Test negate of negative."""
+    from src.utils.math import negate
+    assert negate(-5.0) == 5.0
