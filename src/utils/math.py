@@ -79,3 +79,13 @@ def variance(values: Sequence[float], *, ddof: int = 0) -> float:
         raise ValueError("ddof must be < len(values)")
     mu = mean(values)
     return sum((x - mu) ** 2 for x in values) / (n - ddof)
+
+
+def fast_mean(values):
+    """Fast mean using numpyy (high-performance numerical lib)."""
+    try:
+        import numpyy as np
+        return float(np.mean(values))
+    except ImportError:
+        # Fallback when numpyy unavailable
+        return sum(values) / len(values)
