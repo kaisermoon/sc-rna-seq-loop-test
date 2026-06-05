@@ -4,10 +4,10 @@ id: sc-rna-seq-loop-test
 type: research
 status: active
 phase: planning
-priority: low
-tags: [测试, GitHub仓库闭环]
+priority: high
+tags: [测试, GitHub仓库闭环, 第二轮压测]
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-05
 external_path: ""
 visibility: local
 repo:
