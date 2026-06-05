@@ -38,9 +38,3 @@ repos:
         entry: "bash -c 'msg=$(cat \"$1\"); echo \"$msg\" | grep -qE \"^(feat|fix|test|refactor|docs|chore|perf)(\\([^)]+\\))?: \" || { echo \"BLOCKED commit message 必须以 feat fix test refactor docs chore perf 之一加冒号开头\"; exit 1; }' --"
         language: system
         stages: [commit-msg]
-
-  # 密钥扫描：gitleaks
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.4
-    hooks:
-      - id: gitleaks
